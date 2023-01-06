@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MissingLinq", "MissingLinq\MissingLinq.csproj", "{24937569-A2B8-4E43-94D2-F44707630F34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissingLinq.Tests", "..\test\MissingLinq.Tests\MissingLinq.Tests.csproj", "{FC89DE6C-AA57-40CE-8918-6C0D91F8834B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissingLinq.MySql", "MissingLinq.MySql\MissingLinq.MySql.csproj", "{A2682650-FE92-4792-848C-FEE127C0E3FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissingLinq.MySql.Tests", "..\test\MissingLinq.MySql.Tests\MissingLinq.MySql.Tests.csproj", "{DE994D90-8151-4BD9-B5BC-FFC62E1CA5A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{2997448C-41AE-4AE2-90C8-AF8EE0BE3150}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A8FEA6BD-6FBE-4B86-A8C7-CD7B83C869BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissingLinq.MySql.Benchmarks", "MissingLinq.MySql.Benchmarks\MissingLinq.MySql.Benchmarks.csproj", "{0AB3900A-EC45-4787-AFC5-F66C47351916}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24937569-A2B8-4E43-94D2-F44707630F34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24937569-A2B8-4E43-94D2-F44707630F34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24937569-A2B8-4E43-94D2-F44707630F34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24937569-A2B8-4E43-94D2-F44707630F34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC89DE6C-AA57-40CE-8918-6C0D91F8834B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC89DE6C-AA57-40CE-8918-6C0D91F8834B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC89DE6C-AA57-40CE-8918-6C0D91F8834B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC89DE6C-AA57-40CE-8918-6C0D91F8834B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2682650-FE92-4792-848C-FEE127C0E3FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2682650-FE92-4792-848C-FEE127C0E3FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2682650-FE92-4792-848C-FEE127C0E3FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2682650-FE92-4792-848C-FEE127C0E3FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE994D90-8151-4BD9-B5BC-FFC62E1CA5A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE994D90-8151-4BD9-B5BC-FFC62E1CA5A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE994D90-8151-4BD9-B5BC-FFC62E1CA5A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE994D90-8151-4BD9-B5BC-FFC62E1CA5A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AB3900A-EC45-4787-AFC5-F66C47351916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB3900A-EC45-4787-AFC5-F66C47351916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB3900A-EC45-4787-AFC5-F66C47351916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB3900A-EC45-4787-AFC5-F66C47351916}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{24937569-A2B8-4E43-94D2-F44707630F34} = {2997448C-41AE-4AE2-90C8-AF8EE0BE3150}
+		{FC89DE6C-AA57-40CE-8918-6C0D91F8834B} = {A8FEA6BD-6FBE-4B86-A8C7-CD7B83C869BF}
+		{A2682650-FE92-4792-848C-FEE127C0E3FC} = {2997448C-41AE-4AE2-90C8-AF8EE0BE3150}
+		{DE994D90-8151-4BD9-B5BC-FFC62E1CA5A2} = {A8FEA6BD-6FBE-4B86-A8C7-CD7B83C869BF}
+		{0AB3900A-EC45-4787-AFC5-F66C47351916} = {A8FEA6BD-6FBE-4B86-A8C7-CD7B83C869BF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6C361E5-F3A0-4FBD-88D0-80BD06B8B5AF}
+	EndGlobalSection
+EndGlobal

@@ -1,4 +1,5 @@
-﻿using MissingLinq.Attributes;
+﻿using System.Collections.Concurrent;
+using MissingLinq.Attributes;
 using System.Reflection;
 
 namespace MissingLinq.Resolvers;
@@ -9,20 +10,24 @@ namespace MissingLinq.Resolvers;
 /// </summary>
 public class DefaultTableNameResolver : ITableNameResolver
 {
+    private static readonly ConcurrentDictionary<Type, string> ResolvedTableNames = new();
+    
     /// <summary>
     /// Provides a common instance to be shared.
     /// </summary>
     public static DefaultTableNameResolver Instance { get; } = new DefaultTableNameResolver();
 
     /// <inheritdoc/>
-    public string Resolve(Type type)
+    public virtual string Resolve(Type type)
     {
-        var tableNameAttribute = type.GetCustomAttribute<TableNameAttribute>();
-        if (tableNameAttribute == null)
+        if (!ResolvedTableNames.TryGetValue(type, out var resolvedName))
         {
-            return type.Name;
+            var tableNameAttribute = type.GetCustomAttribute<TableNameAttribute>();
+            ResolvedTableNames.TryAdd(
+                type,
+                resolvedName = tableNameAttribute == null ? type.Name : tableNameAttribute.TableName);
         }
 
-        return tableNameAttribute.TableName;
+        return resolvedName;
     }
 }

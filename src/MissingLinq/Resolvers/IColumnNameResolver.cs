@@ -12,13 +12,7 @@ public interface IColumnNameResolver
 
     string Resolve(Type type, string propertyName);
 
-    IEnumerable<(string PropertyName, string ColumnName)> ResolveAllColumns<T>() { return ResolveAllColumns(typeof(T)); }
+    (string PropertyName, string ColumnName)[] ResolveAllColumns<T>() { return ResolveAllColumns(typeof(T)); }
 
-    IEnumerable<(string PropertyName, string ColumnName)> ResolveAllColumns(Type type)
-    {
-        var properties = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
-        return properties
-            .Select(p => (PropertyName: p.Name, ColumnName: Resolve(type, p.Name)))
-            .OrderBy(c => c.ColumnName);
-    }
+    (string PropertyName, string ColumnName)[] ResolveAllColumns(Type type);
 }

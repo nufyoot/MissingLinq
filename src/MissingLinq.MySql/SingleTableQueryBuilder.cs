@@ -56,7 +56,25 @@ public class SingleTableQueryBuilder<T>
     {
         var columns = _columnNameResolver.ResolveAllColumns<T>();
         builder.Append("select ");
-        builder.AppendJoin(", ", columns.Select(c => c.ColumnName.Equals(c.PropertyName, StringComparison.OrdinalIgnoreCase) ? $"{c.ColumnName}" : $"{c.ColumnName} as {c.PropertyName}"));
+
+        foreach (var column in columns)
+        {
+            if (column.ColumnName.Equals(column.PropertyName, StringComparison.OrdinalIgnoreCase))
+            {
+                builder.Append(column.ColumnName);
+            }
+            else
+            {
+                builder.Append($"{column.ColumnName} as {column.PropertyName}");
+            }
+
+            builder.Append(", ");
+        }
+
+        if (columns.Length > 0)
+        {
+            builder.Length -= 2;
+        }
     }
 
     public virtual void BuildFrom(StringBuilder builder)

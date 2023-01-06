@@ -1,4 +1,5 @@
-﻿using MissingLinq.Attributes;
+﻿using System.Collections.Concurrent;
+using MissingLinq.Attributes;
 using System.Reflection;
 
 namespace MissingLinq.Resolvers;
@@ -9,10 +10,12 @@ namespace MissingLinq.Resolvers;
 /// </summary>
 public class DefaultColumnNameResolver : IColumnNameResolver
 {
+    private static readonly ConcurrentDictionary<Type, (string PropertyName, string ColumnName)[]> ResolvedTableColumns = new();
+
     /// <summary>
     /// Provides a common instance to be shared.
     /// </summary>
-    public static DefaultColumnNameResolver Instance { get; } = new DefaultColumnNameResolver();
+    public static DefaultColumnNameResolver Instance { get; } = new();
 
     /// <inheritdoc/>
     public string Resolve(Type type, string propertyName)
@@ -24,11 +27,21 @@ public class DefaultColumnNameResolver : IColumnNameResolver
         }
 
         var columnNameAttribute = propertyInfo.GetCustomAttribute<ColumnNameAttribute>();
-        if (columnNameAttribute == null)
+        return columnNameAttribute == null ? propertyInfo.Name : columnNameAttribute.ColumnName;
+    }
+
+    public (string PropertyName, string ColumnName)[] ResolveAllColumns(Type type)
+    {
+        if (!ResolvedTableColumns.TryGetValue(type, out var columns))
         {
-            return propertyInfo.Name;
+            var properties = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
+            columns = properties
+                .Select(p => (PropertyName: p.Name, ColumnName: Resolve(type, p.Name)))
+                .OrderBy(c => c.ColumnName)
+                .ToArray();
+            ResolvedTableColumns.TryAdd(type, columns);
         }
 
-        return columnNameAttribute.ColumnName;
+        return columns;
     }
 }

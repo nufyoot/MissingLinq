@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A8FEA6BD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissingLinq.MySql.Benchmarks", "MissingLinq.MySql.Benchmarks\MissingLinq.MySql.Benchmarks.csproj", "{0AB3900A-EC45-4787-AFC5-F66C47351916}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissingLinq.Benchmarks", "MissingLinq.Benchmarks\MissingLinq.Benchmarks.csproj", "{2991137A-5090-4797-A9FC-296766B9859D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{0AB3900A-EC45-4787-AFC5-F66C47351916}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AB3900A-EC45-4787-AFC5-F66C47351916}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AB3900A-EC45-4787-AFC5-F66C47351916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2991137A-5090-4797-A9FC-296766B9859D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2991137A-5090-4797-A9FC-296766B9859D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2991137A-5090-4797-A9FC-296766B9859D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2991137A-5090-4797-A9FC-296766B9859D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{A2682650-FE92-4792-848C-FEE127C0E3FC} = {2997448C-41AE-4AE2-90C8-AF8EE0BE3150}
 		{DE994D90-8151-4BD9-B5BC-FFC62E1CA5A2} = {A8FEA6BD-6FBE-4B86-A8C7-CD7B83C869BF}
 		{0AB3900A-EC45-4787-AFC5-F66C47351916} = {A8FEA6BD-6FBE-4B86-A8C7-CD7B83C869BF}
+		{2991137A-5090-4797-A9FC-296766B9859D} = {A8FEA6BD-6FBE-4B86-A8C7-CD7B83C869BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B6C361E5-F3A0-4FBD-88D0-80BD06B8B5AF}
